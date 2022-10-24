@@ -190,9 +190,9 @@ onMounted(() => {
         :style="`transform: translate(${playerMove}px,${playerFall}px)`"
       >
         <!-- 開發時用 -->
-        <!-- <img src="../assets/Player.jpg" ref="img" /> -->
-        <!-- Build時用 -->
-        <img src="/down-stairs/assets/Player.jpg" ref="img" />
+        <img src="../assets/Player.jpg" ref="img" />
+        <!-- Build之後要手動改成這個路徑 -->
+        <!-- <img src="/down-stairs/assets/Player.jpg" ref="img" /> -->
       </div>
     </div>
     <div class="fail" ref="fail">
