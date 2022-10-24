@@ -1,5 +1,4 @@
 <script setup>
-import { remove } from "@vue/shared";
 import { ref } from "vue";
 import { onMounted } from "vue";
 
@@ -15,7 +14,7 @@ const fall = ref(setInterval(timeCounter.value, 30));
 const create = ref(null);
 const stairCreate = ref(null);
 const stair = ref([]);
-const stairTop = ref(0);
+const stairTop = ref(280);
 
 const scroll = ref(null);
 const bgPos = ref(0);
@@ -129,7 +128,7 @@ function gameOver() {
     window.clearInterval(fall.value);
     window.removeEventListener("keydown", playerMoving);
     // img.value.src = "/src/assets/PlayerFail.jpg"; // 開發時用
-    img.value.src = "/assets/PlayerFail.jpg"; // Build時用
+    img.value.src = "/down-stairs/assets/PlayerFail.jpg"; // Build時用
     fail.value.style.display = "flex";
     //   alert("Game Over");
   }
@@ -190,7 +189,10 @@ onMounted(() => {
         ref="player"
         :style="`transform: translate(${playerMove}px,${playerFall}px)`"
       >
-        <img src="../assets/Player.jpg" ref="img" />
+        <!-- 開發時用 -->
+        <!-- <img src="../assets/Player.jpg" ref="img" /> -->
+        <!-- Build時用 -->
+        <img src="/down-stairs/assets/Player.jpg" ref="img" />
       </div>
     </div>
     <div class="fail" ref="fail">
